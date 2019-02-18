@@ -1,0 +1,304 @@
+{
+	"variables": [],
+	"info": {
+		"name": "LEMS-EDU",
+		"_postman_id": "8f8abd14-1c34-ea4e-e16b-6c7939f3f8be",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "디바이스 세팅",
+			"request": {
+				"url": "{{PLATFORM_URL}}/S{{device_id}}/setting",
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-M2M-RI",
+						"value": "2626",
+						"description": ""
+					},
+					{
+						"key": "X-M2M-Origin",
+						"value": "/{{lems_admin_id}}",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "{{lems_admin_access_token}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.onem2m-res+json;ty=4",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"m2m:cin\" : {\r\n      \"cnf\" : \"text\",\r\n\"con\" : \"{ \\\"storeId\\\" : \\\"10250\\\", \\\"powerContracts\\\" : \\\"4294967295\\\", \\\"signOperationType\\\" : \\\"L2\\\", \\\"signControlType\\\" : \\\"S1\\\", \\\"signPolicy\\\" : { \\\"start\\\" : \\\"0730\\\", \\\"end\\\" : \\\"2359\\\" }, \\\"sunrise\\\" : { \\\"time\\\" : \\\"0630\\\", \\\"delay\\\" : \\\"0\\\" }, \\\"sunset\\\" : { \\\"time\\\" : \\\"1950\\\", \\\"delay\\\" : \\\"0\\\" }, \\\"hacon\\\" : { \\\"controlType\\\" : \\\"T4\\\", \\\"recommendedTemperatures\\\" : [ { \\\"month\\\" : \\\"1\\\", \\\"temperature\\\" : \\\"17\\\", \\\"judgmentCriteria\\\" : \\\"2\\\" }, { \\\"month\\\" : \\\"2\\\", \\\"temperature\\\" : \\\"17\\\", \\\"judgmentCriteria\\\" : \\\"2\\\" }, { \\\"month\\\" : \\\"3\\\", \\\"temperature\\\" : \\\"18\\\", \\\"judgmentCriteria\\\" : \\\"0\\\" }, { \\\"month\\\" : \\\"4\\\", \\\"temperature\\\" : \\\"18\\\", \\\"judgmentCriteria\\\" : \\\"0\\\" }, { \\\"month\\\" : \\\"5\\\", \\\"temperature\\\" : \\\"18\\\", \\\"judgmentCriteria\\\" : \\\"0\\\" }, { \\\"month\\\" : \\\"6\\\", \\\"temperature\\\" : \\\"20\\\", \\\"judgmentCriteria\\\" : \\\"1\\\" }, { \\\"month\\\" : \\\"7\\\", \\\"temperature\\\" : \\\"24\\\", \\\"judgmentCriteria\\\" : \\\"1\\\" }, { \\\"month\\\" : \\\"8\\\", \\\"temperature\\\" : \\\"28\\\", \\\"judgmentCriteria\\\" : \\\"1\\\" }, { \\\"month\\\" : \\\"9\\\", \\\"temperature\\\" : \\\"28\\\", \\\"judgmentCriteria\\\" : \\\"0\\\" }, { \\\"month\\\" : \\\"10\\\", \\\"temperature\\\" : \\\"24\\\", \\\"judgmentCriteria\\\" : \\\"0\\\" }, { \\\"month\\\" : \\\"11\\\", \\\"temperature\\\" : \\\"20\\\", \\\"judgmentCriteria\\\" : \\\"0\\\" }, { \\\"month\\\" : \\\"12\\\", \\\"temperature\\\" : \\\"17\\\", \\\"judgmentCriteria\\\" : \\\"2\\\" }], \\\"coolingOnTemperatureAdjustmentValue\\\" : \\\"8\\\", \\\"coolingOffTemperatureAdjustmentValue\\\" : \\\"-2\\\", \\\"heatingOnTemperatureAdjustmentValue\\\" : \\\"-7\\\", \\\"heatingOffTemperatureAdjustmentValue\\\" : \\\"3\\\" }, \\\"peak\\\" : { \\\"controlType\\\" : \\\"P1\\\", \\\"peakPower\\\" : \\\"4294967295\\\" }, \\\"haconMons\\\" : [ { \\\"number\\\" : \\\"1\\\", \\\"usingPort\\\" : { \\\"port1\\\" : 1, \\\"port2\\\" : 0, \\\"port3\\\" : 0, \\\"port4\\\" : 0, \\\"port5\\\" : 0, \\\"port6\\\" : 0, \\\"port7\\\" : 0, \\\"port8\\\" : 0, \\\"port9\\\" : 0, \\\"port10\\\" : 0, \\\"port11\\\" : 0, \\\"port12\\\" : 0, \\\"port13\\\" : 0, \\\"port14\\\" : 0, \\\"port15\\\" : 0 }, \\\"upperTemperatureLimitPerPort\\\" : { \\\"port1\\\" : \\\"35\\\", \\\"port2\\\" : \\\"35\\\", \\\"port3\\\" : \\\"35\\\", \\\"port4\\\" : \\\"35\\\", \\\"port5\\\" : \\\"35\\\", \\\"port6\\\" : \\\"35\\\", \\\"port7\\\" : \\\"35\\\", \\\"port8\\\" : \\\"35\\\", \\\"port9\\\" : \\\"35\\\", \\\"port10\\\" : \\\"35\\\", \\\"port11\\\" : \\\"35\\\", \\\"port12\\\" : \\\"35\\\", \\\"port13\\\" : \\\"35\\\", \\\"port14\\\" : \\\"35\\\", \\\"port15\\\" : \\\"35\\\" }, \\\"lowerTemperatureLimitPerPort\\\" : { \\\"port1\\\" : \\\"-5\\\", \\\"port2\\\" : \\\"-5\\\", \\\"port3\\\" : \\\"-5\\\", \\\"port4\\\" : \\\"-5\\\", \\\"port5\\\" : \\\"-5\\\", \\\"port6\\\" : \\\"-5\\\", \\\"port7\\\" : \\\"-5\\\", \\\"port8\\\" : \\\"-5\\\", \\\"port9\\\" : \\\"-5\\\", \\\"port10\\\" : \\\"-5\\\", \\\"port11\\\" : \\\"-5\\\", \\\"port12\\\" : \\\"-5\\\", \\\"port13\\\" : \\\"-5\\\", \\\"port14\\\" : \\\"-5\\\", \\\"port15\\\" : \\\"-5\\\" }, \\\"alarmDelay\\\" : \\\"10\\\", \\\"timeout\\\" : \\\"24\\\" }, { \\\"number\\\" : \\\"2\\\", \\\"usingPort\\\" : { \\\"port1\\\" : 0, \\\"port2\\\" : 0, \\\"port3\\\" : 0, \\\"port4\\\" : 0, \\\"port5\\\" : 0, \\\"port6\\\" : 0, \\\"port7\\\" : 0, \\\"port8\\\" : 0, \\\"port9\\\" : 0, \\\"port10\\\" : 0, \\\"port11\\\" : 0, \\\"port12\\\" : 0, \\\"port13\\\" : 0, \\\"port14\\\" : 0, \\\"port15\\\" : 0 }, \\\"upperTemperatureLimitPerPort\\\" : { \\\"port1\\\" : \\\"30\\\", \\\"port2\\\" : \\\"30\\\", \\\"port3\\\" : \\\"30\\\", \\\"port4\\\" : \\\"30\\\", \\\"port5\\\" : \\\"30\\\", \\\"port6\\\" : \\\"30\\\", \\\"port7\\\" : \\\"30\\\", \\\"port8\\\" : \\\"30\\\", \\\"port9\\\" : \\\"30\\\", \\\"port10\\\" : \\\"30\\\", \\\"port11\\\" : \\\"30\\\", \\\"port12\\\" : \\\"30\\\", \\\"port13\\\" : \\\"30\\\", \\\"port14\\\" : \\\"30\\\", \\\"port15\\\" : \\\"30\\\" }, \\\"lowerTemperatureLimitPerPort\\\" : \\\"-10\\\", \\\"alarmDelay\\\" : \\\"10\\\", \\\"timeout\\\" : \\\"24\\\" } ] }\"\r\n\t}\r\n}\r\n"
+				},
+				"description": "센서 등록"
+			},
+			"response": []
+		},
+		{
+			"name": "장비 이상 데이터 등록",
+			"request": {
+				"url": "{{PLATFORM_URL}}/S{{device_id}}/health",
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-M2M-RI",
+						"value": "2626",
+						"description": ""
+					},
+					{
+						"key": "X-M2M-Origin",
+						"value": "/{{lems_admin_id}}",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "{{lems_admin_access_token}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.onem2m-res+json;ty=4",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"m2m:cin\" : {\n      \"cnf\" : \"text\",\n\"con\" : \"{ \\\"health\\\" : \\\"ok\\\"}\"\n\t}\n}\n"
+				},
+				"description": "센서 등록"
+			},
+			"response": []
+		},
+		{
+			"name": "피크 데이터 전송",
+			"request": {
+				"url": "{{PLATFORM_URL}}/S{{device_id}}/peak",
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-M2M-RI",
+						"value": "2626",
+						"description": ""
+					},
+					{
+						"key": "X-M2M-Origin",
+						"value": "/{{lems_admin_id}}",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "{{lems_admin_access_token}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.onem2m-res+json;ty=4",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"m2m:cin\" : {\n      \"cnf\" : \"text\",\n\"con\" : \"{ \\\"dateTime\\\" : \\\"201901182359\\\",\n\t\\\"instantaneousPower\\\" : \\\"323123\\\",\n\t\\\"5minPowerConsumption\\\" : \\\"72959496\\\",\n\t\\\"userPeakPowerWh\\\" : \\\"4294967295\\\",\n\t\\\"peakControl\\\" : \\\"y\\\",\n\t\\\"averageT-SensorTemperature\\\" : \\\"25.0\\\" }\"\n\t}\n}\n"
+				},
+				"description": "센서 등록"
+			},
+			"response": []
+		},
+		{
+			"name": "플랫폼에서 전송되는 피크 데이터",
+			"request": {
+				"url": "{{SUBSCRIPTION_URL}}/lems-55555/peak",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"m2m:sgn\":{\"nev\":{\"rep\":{\"m2m:cin\":{\"rn\":\"20190217T193740.872\",\"ty\":4,\"ri\":\"/sgt/aKSxd7uEu2i7F8SgmMRJdP\",\"pi\":\"/sgt/1NuHS9W6E6l8XRTywkMJEr\",\"ct\":\"20190217T193740\",\"lt\":\"20190217T193740\",\"et\":\"20190217T193739\",\"st\":0,\"cr\":\"/lems\",\"cnf\":\"text\",\"cs\":200,\"con\":\"{ \\\"dateTime\\\" : \\\"201901182359\\\",\\n\\t\\\"instantaneousPower\\\" : \\\"323123\\\",\\n\\t\\\"5minPowerConsumption\\\" : \\\"72959496\\\",\\n\\t\\\"userPeakPowerWh\\\" : \\\"4294967295\\\",\\n\\t\\\"peakControl\\\" : \\\"y\\\",\\n\\t\\\"averageT-SensorTemperature\\\" : \\\"25.0\\\" }\"}},\"om\":{\"op\":1,\"org\":\"/lems\"},\"net\":3},\"cr\":\"/lems\"}}"
+				},
+				"description": "플랫폼 -> 구독 서버"
+			},
+			"response": []
+		},
+		{
+			"name": "플랫폼에서 전송되는 장애 데이터",
+			"request": {
+				"url": "{{SUBSCRIPTION_URL}}/lems-55555/health",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"m2m:sgn\":{\"nev\":{\"rep\":{\"m2m:cin\":{\"rn\":\"20190217T194631.328\",\"ty\":4,\"ri\":\"/sgt/3CYFqKHhC9A8aVEIMdpbpA\",\"pi\":\"/sgt/67pLUAP33tXaUPfSSWs0wS\",\"ct\":\"20190217T194631\",\"lt\":\"20190217T194631\",\"et\":\"20190217T194630\",\"st\":0,\"cr\":\"/lems\",\"cnf\":\"text\",\"cs\":18,\"con\":\"{ \\\"health\\\" : \\\"ok\\\"}\"}},\"om\":{\"op\":1,\"org\":\"/lems\"},\"net\":3},\"cr\":\"/lems\"}}"
+				},
+				"description": "플랫폼 -> 구독 서버"
+			},
+			"response": []
+		},
+		{
+			"name": "디바이스 세팅 조회",
+			"request": {
+				"url": {
+					"raw": "{{PLATFORM_URL}}/S{{device_id}}/setting/la?atr=con",
+					"host": [
+						"{{PLATFORM_URL}}"
+					],
+					"path": [
+						"S{{device_id}}",
+						"setting",
+						"la"
+					],
+					"query": [
+						{
+							"key": "atr",
+							"value": "con",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "X-M2M-RI",
+						"value": "2626",
+						"description": ""
+					},
+					{
+						"key": "X-M2M-Origin",
+						"value": "/{{lems_admin_id}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.onem2m-res+json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "{{lems_admin_access_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"m2m:cin\" : {\n      \"cnf\" : \"application/json\",\n      \"con\" : \"{ \\\"power\\\" : \\\"on\\\" }\"\n      }\n}"
+				},
+				"description": null
+			},
+			"response": [
+				{
+					"id": "9984db7d-ad33-41f9-8a35-e103425e1e6b",
+					"name": "74.contentInstance create - rc",
+					"originalRequest": {
+						"url": "http://localhost:9000/Mobius/remoteCSE-0.2.481.1.0001.001.000111/container-cont_data_1",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"name": "Accept"
+							},
+							{
+								"key": "locale",
+								"value": "en",
+								"name": "locale"
+							},
+							{
+								"key": "dKey",
+								"value": "ZjMxZTUwZTctMDNjZC00OTg5LThlMDUtYmJmZjg4NTFmN2I0",
+								"name": "dKey"
+							},
+							{
+								"key": "X-M2M-RI",
+								"value": "12345",
+								"name": "X-M2M-RI"
+							},
+							{
+								"key": "X-M2M-Origin",
+								"value": "Origin",
+								"name": "X-M2M-Origin"
+							},
+							{
+								"key": "X-M2M-NM",
+								"value": "data",
+								"name": "X-M2M-NM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.onem2m-res+xml;ty=4",
+								"name": "Content-Type"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<m2m:cin xmlns:m2m=\"http://www.onem2m.org/xml/protocols\">\n    <cnf>text</cnf>\n    <con>101</con>\n</m2m:cin>"
+						},
+						"description": ""
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "357",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Location",
+							"key": "Content-Location",
+							"value": "/Mobius/remoteCSE-0.2.481.1.0001.001.000111/container-cont_data_1/contentInstance-data",
+							"description": "An alternate location for the returned data"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.onem2m-res+xml;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Wed, 18 Nov 2015 00:57:33 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "X-M2M-RI",
+							"key": "X-M2M-RI",
+							"value": "12345",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-M2M-RSC",
+							"key": "X-M2M-RSC",
+							"value": "2001",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><m2m:cin xmlns:m2m=\"http://www.onem2m.org/xml/protocols\"><ty>4</ty><ri>CI00000000000000000149</ri><rn>data</rn><pi>CT00000000000000000059</pi><ct>20151118T005732</ct><lt>20151118T005732</lt><lbl></lbl><et>20151124T233732</et><at></at><aa></aa><st>4</st><cnf>text</cnf><cs>3</cs><con>101</con></m2m:cin>"
+				}
+			]
+		}
+	]
+}
